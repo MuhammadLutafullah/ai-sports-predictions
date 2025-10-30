@@ -1,0 +1,16 @@
+project_id = "rzschjwgyxypaqigxzum"
+
+[functions.fetch-leagues]
+verify_jwt = false
+
+[functions.fetch-games]
+verify_jwt = false
+
+[functions.fetch-live]
+verify_jwt = false
+
+[functions.fetch-odds]
+verify_jwt = false
+
+[functions.ai-prediction]
+verify_jwt = false

@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes gradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+}
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+/* @layer base {
+  :root {
+    --background: 210 29% 7%;
+    --foreground: 210 20% 98%;
+
+    --card: 210 24% 10%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 210 24% 10%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 196 100% 47%;
+    --primary-foreground: 210 29% 7%;
+
+    --secondary: 162 100% 50%;
+    --secondary-foreground: 210 29% 7%;
+
+    --muted: 210 24% 16%;
+    --muted-foreground: 210 10% 60%;
+
+    --accent: 196 100% 47%;
+    --accent-foreground: 210 29% 7%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 210 24% 16%;
+    --input: 210 24% 16%;
+    --ring: 196 100% 47%;
+
+    --radius: 0.75rem;
+
+    --chart-1: 196 100% 47%;
+    --chart-2: 162 100% 50%;
+    --chart-3: 280 100% 60%;
+    --chart-4: 45 100% 60%;
+    --chart-5: 340 75% 55%;
+
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(196 100% 47%),
+      hsl(162 100% 50%)
+    );
+    --gradient-card: linear-gradient(
+      135deg,
+      hsl(210 24% 10% / 0.6),
+      hsl(210 24% 12% / 0.4)
+    );
+    --glow-primary: 0 0 40px hsl(196 100% 47% / 0.3);
+    --glow-secondary: 0 0 40px hsl(162 100% 50% / 0.3);
+  }
+} */
+
+@layer base {
+  :root {
+    --background: 220 25% 8%;
+    --foreground: 210 20% 98%;
+
+    --card: 220 20% 10%;
+    --card-foreground: 210 25% 95%;
+
+    --popover: 220 20% 9%;
+    --popover-foreground: 210 20% 96%;
+
+    --primary: 210 100% 60%;
+    --primary-foreground: 220 25% 8%;
+
+    --secondary: 270 80% 65%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 220 15% 14%;
+    --muted-foreground: 210 10% 70%;
+
+    --accent: 160 80% 55%;
+    --accent-foreground: 220 25% 8%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 220 15% 18%;
+    --input: 220 15% 16%;
+    --ring: 210 100% 60%;
+
+    --radius: 0.75rem;
+
+    /* Text content specific colors */
+    --text-heading: 210 20% 98%;
+    --text-body: 210 15% 88%;
+    --text-muted: 210 10% 65%;
+    --text-link: 210 100% 65%;
+    --text-link-hover: 210 100% 75%;
+    --text-code: 160 80% 55%;
+
+    /* Background variations */
+    --bg-surface: 220 20% 9%;
+    --bg-elevated: 220 18% 12%;
+    --bg-subtle: 220 25% 6%;
+    --bg-overlay: 220 25% 5% / 0.8;
+
+    /* Chart colors */
+    --chart-1: 210 100% 60%;
+    --chart-2: 270 80% 65%;
+    --chart-3: 160 80% 55%;
+    --chart-4: 40 90% 60%;
+    --chart-5: 320 75% 60%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(210 100% 60%),
+      hsl(270 80% 65%)
+    );
+    --gradient-secondary: linear-gradient(
+      135deg,
+      hsl(160 80% 55%),
+      hsl(40 90% 60%)
+    );
+    --gradient-bg: linear-gradient(135deg, hsl(220 25% 8%), hsl(220 30% 6%));
+    --gradient-card: linear-gradient(
+      135deg,
+      hsl(220 20% 10% / 0.9),
+      hsl(220 18% 12% / 0.8)
+    );
+
+    /* Glow effects */
+    --glow-primary: 0 0 40px hsl(210 100% 60% / 0.25);
+    --glow-secondary: 0 0 40px hsl(270 80% 65% / 0.25);
+    --glow-accent: 0 0 40px hsl(160 80% 55% / 0.25);
+  }
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(196 100% 47%), hsl(162 100% 50%));
+  }
+
+  .gradient-card {
+    background: linear-gradient(
+      135deg,
+      hsl(210 24% 10% / 0.6),
+      hsl(210 24% 12% / 0.4)
+    );
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 40px hsl(196 100% 47% / 0.3);
+  }
+
+  .glow-secondary {
+    box-shadow: 0 0 40px hsl(162 100% 50% / 0.3);
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
