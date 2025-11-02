@@ -21,14 +21,17 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("http://18.117.132.151:8080/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          accept: "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
+      const response = await fetch(
+        "http://18.117.132.151:8080/backend/auth/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            accept: "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+        }
+      );
 
       const data = await response.json();
 

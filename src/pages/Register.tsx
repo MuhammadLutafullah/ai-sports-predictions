@@ -38,20 +38,23 @@ const Register = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("http://18.117.132.151:8080/auth/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          accept: "application/json",
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJndWxmYXJtcGFpaUBleGFtcGxlLmNvbSIsImV4cCI6MTc2MTkyNTg4MH0.oqfWR74SGyrHBFRCXKUCT_KajJHWc28V7rGdT_rtZ1Y",
-        },
-        body: JSON.stringify({
-          username: name,
-          email,
-          password,
-        }),
-      });
+      const response = await fetch(
+        "http://18.117.132.151:8080/backend/auth/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            accept: "application/json",
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJndWxmYXJtcGFpaUBleGFtcGxlLmNvbSIsImV4cCI6MTc2MTkyNTg4MH0.oqfWR74SGyrHBFRCXKUCT_KajJHWc28V7rGdT_rtZ1Y",
+          },
+          body: JSON.stringify({
+            username: name,
+            email,
+            password,
+          }),
+        }
+      );
 
       const data = await response.json();
 
